@@ -25,7 +25,6 @@ import {
 export default function ButtonShowcase() {
   const [activeCategory, setActiveCategory] = useState("all");
   const [darkMode, setDarkMode] = useState(true);
-  const [copied, setCopied] = useState(false);
 
   const copyInstallCmd = async () => {
     await navigator.clipboard.writeText("npm i @basatmaqsood/react-icons");
@@ -671,7 +670,6 @@ export default function ButtonShowcase() {
                   <FiCopy className="w-4 h-4" />
                 </button>
               </div>
-              {copied && <p className="text-green-400 mt-2 text-sm">Copied!</p>}
             </div>
 
             {/* Step 2 */}
