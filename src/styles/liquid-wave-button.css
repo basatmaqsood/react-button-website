@@ -1,0 +1,34 @@
+.liquid-wave-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-wave-button__content {
+  position: relative;
+  z-index: 10;
+}
+
+.liquid-wave-button__wave {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0);
+  width: 300%;
+  padding-bottom: 300%;
+  animation: liquidWave 1.5s ease-out forwards;
+}
+
+@keyframes liquidWave {
+  0% {
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+  }
+}
+

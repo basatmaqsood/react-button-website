@@ -1,0 +1,24 @@
+.morphing-button-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.morphing-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.morphing-button__content {
+  position: relative;
+  z-index: 10;
+}
+
+.diamond-wrapper {
+  transform-origin: center;
+}
+
+.diamond-content {
+  display: inline-block;
+  transform: rotate(-45deg);
+}
+

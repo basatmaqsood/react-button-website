@@ -1,0 +1,22 @@
+.magnetic-pull-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.magnetic-pull-button {
+  position: relative;
+  z-index: 10;
+}
+
+.magnetic-pull-element {
+  position: absolute;
+  border-radius: 50%;
+  z-index: 1;
+  transition: transform 0.05s ease-out;
+}
+

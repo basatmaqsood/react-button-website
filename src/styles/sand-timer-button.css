@@ -1,0 +1,166 @@
+.sand-timer-button-container {
+  position: relative;
+  display: inline-block;
+}
+
+.sand-timer-button {
+  position: relative;
+  overflow: hidden;
+}
+
+.sand-timer-button__content {
+  position: relative;
+  z-index: 10;
+}
+
+.sand-timer-button__progress-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.sand-timer-button__progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transition: height 0.05s linear;
+}
+
+.sand-timer-button__particles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sand-timer-button__particle {
+  position: absolute;
+  top: 0;
+  border-radius: 50%;
+  opacity: 0;
+  animation: sandFall forwards;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.sand-timer-button__particle--square {
+  border-radius: 0;
+}
+
+.sand-timer-button__particle--diamond {
+  border-radius: 0;
+}
+
+.sand-timer-button__hourglass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.sand-timer-button__hourglass-top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  clip-path: polygon(20% 0%, 80% 0%, 100% 100%, 0% 100%);
+}
+
+.sand-timer-button__hourglass-middle {
+  position: absolute;
+  top: 30%;
+  left: 40%;
+  width: 20%;
+  height: 40%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.sand-timer-button__hourglass-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30%;
+  clip-path: polygon(0% 0%, 100% 0%, 80% 100%, 20% 100%);
+}
+
+@keyframes sandFall {
+  0% {
+    transform: translateY(-100%) rotate(0deg);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(200%) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.sand-timer-button.is-completed--pulse {
+  animation: completePulse 0.5s forwards;
+}
+
+.sand-timer-button.is-completed--shake {
+  animation: completeShake 0.5s forwards;
+}
+
+.sand-timer-button.is-completed--glow {
+  animation: completeGlow 1s forwards;
+}
+
+@keyframes completePulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes completeShake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  20%,
+  60% {
+    transform: translateX(-5px);
+  }
+  40%,
+  80% {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes completeGlow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 215, 0, 0.6);
+  }
+}
+

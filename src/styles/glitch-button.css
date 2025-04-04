@@ -1,0 +1,81 @@
+.glitch-button-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.glitch-button {
+  position: relative;
+  overflow: visible;
+}
+
+.glitch-button.is-glitching {
+  animation: glitchShift 0.2s infinite alternate-reverse;
+}
+
+.glitch-button__content {
+  position: relative;
+  z-index: 10;
+}
+
+.glitch-button__layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 5;
+}
+
+.glitch-button__layer--1 {
+  animation: glitchLayer1 0.1s infinite alternate-reverse;
+}
+
+.glitch-button__layer--2 {
+  animation: glitchLayer2 0.15s infinite alternate-reverse;
+}
+
+@keyframes glitchShift {
+  0% {
+    transform: translate(0);
+  }
+  25% {
+    transform: translate(-2px, 1px);
+  }
+  50% {
+    transform: translate(1px, -1px);
+  }
+  75% {
+    transform: translate(-1px, -2px);
+  }
+  100% {
+    transform: translate(2px, 2px);
+  }
+}
+
+@keyframes glitchLayer1 {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes glitchLayer2 {
+  0% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.8;
+  }
+}
+
